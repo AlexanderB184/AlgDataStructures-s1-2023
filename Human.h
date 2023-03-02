@@ -5,6 +5,7 @@
 #include <string>
 
 class Human : public Player {
+    public:
   Human() { name = "Human"; };
   char makeMove();
 };

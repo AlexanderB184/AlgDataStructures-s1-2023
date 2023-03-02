@@ -5,6 +5,7 @@
 #include <string>
 
 class Computer : public Player {
+    public:
   Computer() { name = "Computer"; };
   char makeMove();
 };
