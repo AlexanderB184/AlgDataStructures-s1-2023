@@ -4,7 +4,6 @@
 Player* Referee::refGame(Player* player1, Player* player2) {
   char player1choice = player1->makeMove();
   char player2choice = player2->makeMove();
-  int shift;
 
   switch (player1choice) {
     case 'R':
