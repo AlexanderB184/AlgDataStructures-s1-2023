@@ -4,6 +4,7 @@
 #include "Player.h"
 
 class Human : public Player {
+  Human() {name = "Human"};
   char makeMove();
 };
 

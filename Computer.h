@@ -3,7 +3,8 @@
 
 #include "Player.h"
 
-class Computer : public Player{
+class Computer : public Player {
+  Computer() {name = "Computer"};
   char makeMove();
 };
 
