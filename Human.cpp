@@ -15,4 +15,5 @@ char Human::makeMove() {
       }
       std::cout << "That is not a valid option" << std::endl;
   }
+  return "E";
 };
