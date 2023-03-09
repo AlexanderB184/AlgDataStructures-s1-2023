@@ -7,7 +7,7 @@
 class Monkey : public Move {
     public:
      bool beats(Move *);
-     std::string getType() { return "Monkey"; };
+     std::string getName() { return "Monkey"; };
 };
 
 #endif

@@ -3,6 +3,6 @@
 #include <string>
 
 bool Pirate::beats( Move * moveToBeat) {
-  std::string moveToBeatType = moveToBeat->getType();
+  std::string moveToBeatType = moveToBeat->getName();
     return moveToBeatType == " Monkey" || moveToBeatType == "Robot";
 }

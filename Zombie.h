@@ -7,7 +7,7 @@
 class Zombie : public Move {
     public:
      bool beats(Move *);
-     std::string getType() { return "Zombie"; };
+     std::string getName() { return "Zombie"; };
 };
 
 #endif

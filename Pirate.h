@@ -7,7 +7,7 @@
 class Pirate : public Move {
     public:
      bool beats(Move *);
-     std::string getType() { return "Pirate"; };
+     std::string getName() { return "Pirate"; };
 };
 
 #endif
