@@ -15,6 +15,8 @@ using namespace std;
 
 Human::Human() { name = "you"; }
 
+Human::Human(string _name) { name = _name; }
+
 Move* Human::makeMove() {
   bool isValidMove = false;
   std::string move;
