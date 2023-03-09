@@ -13,14 +13,14 @@
 
 using namespace std;
 
-Human::Human() { name = "you"; }
+Human::Human() { name = "Human"; }
 
 Human::Human(string _name) { name = _name; }
 
 Move* Human::makeMove() {
   bool isValidMove = false;
   std::string move;
-  cout << "Choose a move, Rock, Paper, Scissors, Monkey, Pirate, Ninja or Robot"
+  cout << "Choose a move:"
        << endl;
   while (!isValidMove) {
     // ask for move
