@@ -44,6 +44,7 @@ Move* Human::makeMove() {
       return new Zombie();
     } else {
       cout << "That is not a valid move" << endl;
+      return nullptr;
     }
   }
 }
