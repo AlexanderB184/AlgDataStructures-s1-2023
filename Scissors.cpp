@@ -1,7 +1,7 @@
 #include "Scissors.h"
 
 bool Scissors::beats( Move * moveToBeat) {
-    if (moveToBeat->getType() == "Paper") {
+    if (moveToBeat->getName() == "Paper") {
       return true;
     }
     return false;

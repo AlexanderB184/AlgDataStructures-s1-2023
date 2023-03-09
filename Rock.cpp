@@ -3,7 +3,7 @@
 #include <iostream>
 
 bool Rock::beats( Move * moveToBeat) {
-  if (moveToBeat->getType() == "Scissors") {
+  if (moveToBeat->getName() == "Scissors") {
     return true;
   }
     return false;

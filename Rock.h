@@ -7,7 +7,7 @@
 class Rock : public Move{
     public:
      bool beats(Move *);
-     std::string getType() { return "Rock"; };
+     std::string getName() { return "Rock"; };
 };
 
 #endif
