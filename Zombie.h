@@ -1,13 +1,14 @@
 #ifndef ZOMBIE
 #define ZOMBIE
 
-#include "Move.h"
 #include <string>
 
+#include "Move.h"
+
 class Zombie : public Move {
-    public:
-     bool beats(Move *);
-     std::string getName() { return "Zombie"; };
+ public:
+  bool beats(Move *);
+  std::string getName() { return "Zombie"; };
 };
 
 #endif

@@ -1,13 +1,14 @@
 #ifndef ROBOT
 #define ROBOT
 
-#include "Move.h"
 #include <string>
 
+#include "Move.h"
+
 class Robot : public Move {
-    public:
-     bool beats(Move *);
-     std::string getName() { return "Robot"; };
+ public:
+  bool beats(Move *);
+  std::string getName() { return "Robot"; };
 };
 
 #endif

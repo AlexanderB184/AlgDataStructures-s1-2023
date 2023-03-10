@@ -10,8 +10,8 @@
 #include "Scissors.h"
 #include "Zombie.h"
 
-Move * MoveConstructor::stringToMove(std::string moveName) {
-    if (moveName == "Rock") {
+Move* MoveConstructor::stringToMove(std::string moveName) {
+  if (moveName == "Rock") {
     return new Rock();
   } else if (moveName == "Paper") {
     return new Paper();

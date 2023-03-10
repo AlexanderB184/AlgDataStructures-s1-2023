@@ -1,9 +1,8 @@
 #include "Human.h"
 
-#include "MoveConstructor.h"
-
 #include <iostream>
 
+#include "MoveConstructor.h"
 
 using namespace std;
 

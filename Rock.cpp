@@ -2,9 +2,9 @@
 
 #include <iostream>
 
-bool Rock::beats( Move * moveToBeat) {
+bool Rock::beats(Move* moveToBeat) {
   if (moveToBeat->getName() == "Scissors") {
     return true;
   }
-    return false;
+  return false;
 }

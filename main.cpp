@@ -1,35 +1,30 @@
-#include "Referee.h"
+#include <iostream>
 
-#include "Player.h"
 #include "Computer.h"
 #include "Human.h"
-
-#include "Move.h"
-#include "Rock.h"
-#include "Paper.h"
-#include "Scissors.h"
-
 #include "Monkey.h"
-#include "Robot.h"
+#include "Move.h"
 #include "Ninja.h"
-#include "Zombie.h"
+#include "Paper.h"
 #include "Pirate.h"
-
-
-#include <iostream>
+#include "Player.h"
+#include "Referee.h"
+#include "Robot.h"
+#include "Rock.h"
+#include "Scissors.h"
+#include "Zombie.h"
 
 using namespace std;
 
-int main(void) { 
-    Human* you = new Human("Ash");
-    Human* opponent = new Human("Slobian");
-    Referee* ref = new Referee();
-    Player * winner = ref->refGame(you, opponent);
-    if (winner == nullptr) {
-      cout << "Draw" << endl;
-    }
-    else {
-        cout << winner->getName() << endl;
-    }
-    return 0;
+int main(void) {
+  Human* you = new Human("Ash");
+  Human* opponent = new Human("Slobian");
+  Referee* ref = new Referee();
+  Player* winner = ref->refGame(you, opponent);
+  if (winner == nullptr) {
+    cout << "Draw" << endl;
+  } else {
+    cout << winner->getName() << endl;
+  }
+  return 0;
 }

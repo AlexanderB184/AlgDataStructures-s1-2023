@@ -1,11 +1,12 @@
 #ifndef MOVECON
 #define MOVECON
-#include "Move.h"
 #include <string>
 
+#include "Move.h"
+
 class MoveConstructor {
-    public:
-     static Move * stringToMove(std::string);
+ public:
+  static Move* stringToMove(std::string);
 };
 
 #endif

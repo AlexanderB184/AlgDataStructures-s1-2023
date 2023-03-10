@@ -4,9 +4,9 @@
 #include "Player.h"
 
 class Computer : public Player {
-    public:
-     Computer();
-     Move* makeMove();
+ public:
+  Computer();
+  Move* makeMove();
 };
 
 #endif
