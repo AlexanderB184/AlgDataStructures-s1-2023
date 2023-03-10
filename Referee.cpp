@@ -10,8 +10,8 @@ Player * Referee::refGame(Player * Player1, Player * Player2) {
   Move * Player1Move = Player1->makeMove();
   Move* Player2Move = Player2->makeMove();
 
-  std::cout << "Player 1: " << Player1->getName() << "\t" << Player1Move->getName() << std::endl;
-  std::cout << "Player 2: " << Player2->getName() << "\t" << Player2Move->getName() << std::endl;
+  //std::cout << "Player 1: " << Player1->getName() << "\t" << Player1Move->getName() << std::endl;
+  //std::cout << "Player 2: " << Player2->getName() << "\t" << Player2Move->getName() << std::endl;
   // Player 1 wins
   if (Player1Move->beats(Player2Move)) {
     return Player1;
