@@ -21,8 +21,8 @@
 using namespace std;
 
 int main(void) { 
-    Human* you = new Human();
-    Computer* opponent = new Computer();
+    Human* you = new Human("Ash");
+    Human* opponent = new Human("Slobian");
     Referee* ref = new Referee();
     Player * winner = ref->refGame(you, opponent);
     if (winner == nullptr) {
