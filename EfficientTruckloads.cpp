@@ -7,14 +7,19 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize) {
   if (it != nCrate.end()) {
     nCrate.erase(it);
     if (numCrates == 0) {
+      nCrate[0] = 0;
       return 0;
     }
     if (numCrates <= loadSize) {
+      nCrate[numCrates] = 1;
       return 1;
     }
     int halfCrates = numCrates >> 1;
     int otherHalfCrates = numCrates - halfCrates;
-    return numTrucks(halfCrates, loadSize) + numTrucks(otherHalfCrates, loadSize);
+    int output =
+        numTrucks(halfCrates, loadSize) + numTrucks(otherHalfCrates, loadSize);
+    nCrate[numCrates] = output;
+    return output;
   }
   return nCrate[numCrates];
 }
