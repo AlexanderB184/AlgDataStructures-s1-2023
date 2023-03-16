@@ -1,7 +1,6 @@
+#include "EfficientTruckloads.h"
 
-#include "EffiecientTruckloads.h"
-
-int Truckloads::numTrucks(int numCrates, int loadSize) {
+int EfficientTruckloads::numTrucks(int numCrates, int loadSize) {
   static std::map<int, int> nCrate;
   std::map<int, int>::iterator it = nCrate.begin();
   nCrate.find(numCrates);
