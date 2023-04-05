@@ -4,6 +4,9 @@ bool RecursiveBinarySearch::search_helper(std::vector<int> list, int value_to_fi
   if (n == 0) {
     return false;
   }
+  if (n == 1) {
+    return list.at(start) == value_to_find;
+  }
   int middle_pos = (start + end) >> 1;
   int middle = list.at(middle_pos);
 

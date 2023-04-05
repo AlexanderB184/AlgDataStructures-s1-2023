@@ -7,7 +7,8 @@
 int main(void) {
   std::vector<int> list;
   int num;
-  while (std::cin >> num) {
+
+  while (std::cin.peek() != '\n' &&  std::cin>> num) {
     list.push_back(num);
   }
 
@@ -17,8 +18,7 @@ int main(void) {
   bool found = R.search(list, 1);
   if (found) {
     std::cout << "true";
-  }
-  else {
+  } else {
     std::cout << "false";
   }
 
