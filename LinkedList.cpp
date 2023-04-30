@@ -95,10 +95,13 @@ int LinkedList::search(int target) {
 }
 void LinkedList::printList() {
   Node* currentNode = head;
+  cout << "[";
   while (currentNode != nullptr) {
     Node* nextNode = currentNode->link;
-    cout << currentNode->data << " ";
+    
+    cout << currentNode->data;
+    if (nextNode->link != nullptr) cout << " ";
     currentNode = nextNode;
   }
-  cout << endl;
+  cout << "]" << endl;
 }

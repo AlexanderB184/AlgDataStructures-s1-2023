@@ -1,8 +1,8 @@
 #include "BigNumCalc.h"
 
-std::list<int> bigNumCalc::buildBigNum(std::string numString) {
+std::list<int> BigNumCalc::buildBigNum(std::string numString) {
   std::list<int> digit_list;
-  for (int i = 0; i < numString.length(); i++) {
+  for (size_t i = 0; i < numString.length(); i++) {
     int digit = numString[i] - '0';
     digit_list.push_back(digit);
   }
@@ -12,7 +12,7 @@ std::list<int> bigNumCalc::buildBigNum(std::string numString) {
   return digit_list;
 }
 
-std::list<int> bigNumCalc::add(std::list<int> num1, std::list<int> num2) {
+std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2) {
   int size_dif = num1.size() - num2.size();
   if (size_dif > 0) {
     for (int i = 0; i < size_dif; i++) {
@@ -45,7 +45,7 @@ std::list<int> bigNumCalc::add(std::list<int> num1, std::list<int> num2) {
   return num3;
 }
 
-std::list<int> bigNumCalc::sub(std::list<int> num1, std::list<int> num2) {
+std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2) {
   int size_dif = num1.size() - num2.size();
   if (size_dif > 0) {
     for (int i = 0; i < size_dif; i++) {
@@ -75,7 +75,7 @@ std::list<int> bigNumCalc::sub(std::list<int> num1, std::list<int> num2) {
   return num3;
 }
 
-std::list<int> bigNumCalc::mul(std::list<int> num1, std::list<int> num2) {
+std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2) {
   
   std::list<int>::iterator it2 = num2.end();
   std::list<int> num3;
