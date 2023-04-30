@@ -98,9 +98,8 @@ void LinkedList::printList() {
   cout << "[";
   while (currentNode != nullptr) {
     Node* nextNode = currentNode->link;
-    
     cout << currentNode->data;
-    if (nextNode->link != nullptr) cout << " ";
+    if (nextNode != nullptr) cout << " ";
     currentNode = nextNode;
   }
   cout << "]" << endl;
