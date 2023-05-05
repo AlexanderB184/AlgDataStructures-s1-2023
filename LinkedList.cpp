@@ -28,7 +28,7 @@ currNode = currNode->link;
 }
 /////////// your code goes here... DO NOT change the function signatures ///////////
 bool LinkedList::swap(int pos1, int pos2) {
-    Node* curr = head
+    Node* curr = head;
     int i = 0;
     Node* node1 = nullptr;
     Node* pre1 = nullptr;
@@ -40,13 +40,20 @@ bool LinkedList::swap(int pos1, int pos2) {
         if (i == pos2) node2 = curr;
         if (i+1 == pos2) pre2 = curr;
         curr = curr->link;
+        i++;
     }
     if (node1 == nullptr || node2 == nullptr) return false;
     if (pre1 != nullptr) {
-        pre1->link = node2
+        pre1->link = node2;
+    }
+    else {
+        head = node2;
     }
     if (pre2 != nullptr) {
-        pre2->link = node1
+        pre2->link = node1;
+    }
+    else {
+        head = node1;
     }
     Node* temp = node1->link;
     node1->link = node2->link;
