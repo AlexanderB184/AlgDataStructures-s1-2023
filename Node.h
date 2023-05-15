@@ -2,7 +2,7 @@
 #define NODE_H
 #include <vector>
 class Node {
-  friend class AutoComplete;
+  friend class Autocomplete;
   friend class PrefixMatcher;
     private:
      bool is_word;
