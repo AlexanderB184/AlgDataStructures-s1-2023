@@ -104,7 +104,7 @@ void Heap<T>::remove(T value) {
       int parent_index = i;
       i--;
       bool swapped = true;
-      while (swapped && parent_index >= 0) {
+      while (swapped && parent_index >= 0 && parent_index < values.size()) {
         swapped = false;
         int left_child_index = parent_index * 2 + 1;
         int right_child_index = parent_index * 2 + 2;
