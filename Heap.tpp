@@ -54,83 +54,30 @@ Heap<T>::Heap(std::vector<T> start_values) {
 /*******************************/
 // add values to the heap
 /*******************************/
-/*
+
 template <typename T>
 void Heap<T>::insert(T value) {
   values.push_back(value);
-  // re implememting heapify without seg fault issue.
-  int parent_index = (values.size() - 2) >> 1;
-  bool swapped = true;
-  while (swapped && parent_index >= 0) {
-    swapped = false;
-    int left_child_index = parent_index * 2 + 1;
-    int right_child_index = parent_index * 2 + 2;
-    int index_of_smallest = parent_index;
-    if (left_child_index < values.size() &&
-        values.at(left_child_index) < values.at(index_of_smallest)) {
-      // make this index the current smallest
-      index_of_smallest = left_child_index;
-    }
-
-    // check if left child exists and if exists, is smallest value there
-    if (right_child_index < values.size() &&
-        values.at(right_child_index) < values.at(index_of_smallest)) {
-      // make this index the current smallest
-      index_of_smallest = right_child_index;
-    }
-
-    // if parent is not smallest, swap with smallest child
-    if (index_of_smallest != parent_index) {
-      T temp = values.at(parent_index);
-      values.at(parent_index) = values.at(index_of_smallest);
-      values.at(index_of_smallest) = temp;
-      swapped = true;
-    }
-    if (parent_index == 0) break;
-    parent_index = (parent_index - 1) >> 1;
+  // starting from last non-leaf node (last parent), heapify each
+  // of the parents
+  int initial_parent_index = floor(values.size() / 2) - 1;
+  for (int parent_index = initial_parent_index; parent_index >= 0;
+       parent_index--) {
+    heapify(parent_index);
   }
 }
-*/
+
 /*******************************/
 /* delete values from the heap */
 /*******************************/
 
 template <typename T>
 void Heap<T>::remove(T value) {
-  for (int i = 0; i < values.size(); i++) {
+  for (size_t i = 0; i < values.size(); i++) {
     if (values.at(i) == value) {
       values.at(i) = values.at(values.size() - 1);
       values.pop_back();
-      int parent_index = i;
-      i--;
-      bool swapped = true;
-      while (swapped && parent_index >= 0 && parent_index < values.size()) {
-        swapped = false;
-        int left_child_index = parent_index * 2 + 1;
-        int right_child_index = parent_index * 2 + 2;
-        int index_of_smallest = parent_index;
-        if (left_child_index < values.size() &&
-            values.at(left_child_index) < values.at(index_of_smallest)) {
-          // make this index the current smallest
-          index_of_smallest = left_child_index;
-        }
-
-        // check if left child exists and if exists, is smallest value there
-        if (right_child_index < values.size() &&
-            values.at(right_child_index) < values.at(index_of_smallest)) {
-          // make this index the current smallest
-          index_of_smallest = right_child_index;
-        }
-
-        // if parent is not smallest, swap with smallest child
-        if (index_of_smallest != parent_index) {
-          T temp = values.at(parent_index);
-          values.at(parent_index) = values.at(index_of_smallest);
-          values.at(index_of_smallest) = temp;
-          swapped = true;
-          parent_index = index_of_smallest;
-        }
-      }
+      heapify(i);
     }
   }
 }
@@ -179,11 +126,11 @@ void Heap<T>::heapify(int parent_index) {
     T temp = values.at(parent_index);
     values.at(parent_index) = values.at(index_of_smallest);
     values.at(index_of_smallest) = temp;
-  }
 
-  // move up the 'tree' to grandparent
-  int grandparent = floor((parent_index - 1) / 2);
-  heapify(grandparent);
+    // heapify the swapped index - it may need to move
+    // further down the 'tree'
+    heapify(index_of_smallest);
+  }
 }
 
 #endif
