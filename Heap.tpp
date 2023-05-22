@@ -54,7 +54,7 @@ Heap<T>::Heap(std::vector<T> start_values) {
 /*******************************/
 // add values to the heap
 /*******************************/
-
+/*
 template <typename T>
 void Heap<T>::insert(T value) {
   values.push_back(value);
@@ -90,7 +90,7 @@ void Heap<T>::insert(T value) {
     parent_index = (parent_index - 1) >> 1;
   }
 }
-
+*/
 /*******************************/
 /* delete values from the heap */
 /*******************************/
