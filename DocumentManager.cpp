@@ -59,6 +59,9 @@ document* DocumentManager::binary_search(int document_id) {
     else
       return &documents.at(mid);
   }
+  if (documents.at(low).document_id == document_id) {
+    return &documents.at(low);
+  }
   return nullptr;
 }
 
@@ -75,5 +78,5 @@ bool DocumentManager::patron_exists(int patron_id) {
     else
       return true;
   }
-  return false;
+  return patrons.at(low) == patron_id;
 }
