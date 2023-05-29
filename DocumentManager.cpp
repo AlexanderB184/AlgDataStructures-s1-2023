@@ -28,10 +28,6 @@ bool DocumentManager::borrowDocument(int document_id, int patron_id) {
   if (documentToBorrow == nullptr) return false;
   if (documentToBorrow->borrowed_by.size() >= documentToBorrow->licence_limit)
     return false;
-  for (int i = 0; i < documentToBorrow->borrowed_by.size();
-       i++) {  // O(b) {number of borrowers}
-    if (documentToBorrow->borrowed_by.at(i) == patron_id) return false;
-  }
   documentToBorrow->borrowed_by.push_back(patron_id);  // O(1)
   return true;
 }
